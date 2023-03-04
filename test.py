@@ -11,7 +11,7 @@ if __name__ == "__main__":
     @setitem(d, 'func')
     def func():
         return 1
-    print(d['func'])
+    print(d['func']())
 
     @call(print, MISSING)
     def empty(): pass
