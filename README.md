@@ -4,4 +4,4 @@ A library containing several useful Python decorators.
 
 ## Available decorators
 
-All decorators' descriptions can be seen in [](the docs).
+All decorators' descriptions can be seen in [the docs](https://github.com/Keyacom/decorlib/tree/main/docs).
