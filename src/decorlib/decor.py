@@ -33,11 +33,7 @@ def setattr(obj: object, name: str | None = None):
     """
 
     def wrapper(value: R) -> R:
-        if (
-            name is None
-            and hasattr(value, "__name__")
-            and value.__name__ not in kwlist
-        ):
+        if name is None and hasattr(value, "__name__") and value.__name__ not in kwlist:
             _setattr(obj, value.__name__, value)
         else:
             _setattr(obj, name, value)
