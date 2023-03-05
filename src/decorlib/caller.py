@@ -11,26 +11,30 @@ class Caller:
         self.kwargs = kwargs
 
     @overload
-    def register(self, idx: str | int, item=MISSING, /) -> Callable:
+    def register(self, idx: str | int | tuple[()] = (), item=MISSING, /) -> Callable:
         ...
 
     @overload
-    def register(self, idx: str | int, item: object, /) -> None:
+    def register(self, idx: str | int | tuple[()], item: object, /) -> None:
         ...
 
-    def register(self, idx: str | int, item: object = MISSING, /):
+    def register(self, idx: str | int | tuple[()] = (), item: object = MISSING, /):
         def wrap(i):
             match idx:
-                case int():
-                    if idx == len(self.args):
+                case int() | ():
+                    if idx in (len(self.args), ()):
                         self.args.append(i)
                     else:
                         self.args[idx] = i
                 case str():
                     self.kwargs[idx] = i
+                case tuple():
+                    raise TypeError(
+                        f"Expected type of index to be int, str, or an empty tuple, got a non-empty tuple"
+                    )
                 case _:
                     raise TypeError(
-                        f"Expected type of index to be int or str, got {type(idx).__qualname__!r}"
+                        f"Expected type of index to be int, str, or (), got {type(idx).__qualname__!r}"
                     )
             return i
 
