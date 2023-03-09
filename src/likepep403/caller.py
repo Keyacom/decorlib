@@ -10,15 +10,7 @@ class Caller:
         self.args = list(args)
         self.kwargs = kwargs
 
-    @overload
-    def register(self, idx: str | int | tuple[()] = (), item=MISSING, /) -> Callable:
-        ...
-
-    @overload
-    def register(self, idx: str | int | tuple[()], item: object, /) -> None:
-        ...
-
-    def register(self, idx: str | int | tuple[()] = (), item: object = MISSING, /):
+    def register(self, idx: str | int | tuple[()] = (), item: object = MISSING, /) -> Callable | None: # type: ignore
         def wrap(i):
             match idx:
                 case int() | ():
