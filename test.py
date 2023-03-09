@@ -26,7 +26,7 @@ if __name__ == "__main__":
 
     cal = Caller(print, "Function:", MISSING, "Output:", MISSING, sep="\n")
 
-    @cal.register(1) # type: ignore
+    @cal.register(1)  # type: ignore
     def plus_two(a):
         return a + 2
 
