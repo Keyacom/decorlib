@@ -1,4 +1,4 @@
-from src.decorlib import *
+from src.likepep403 import *
 
 if __name__ == "__main__":
 
@@ -31,3 +31,8 @@ if __name__ == "__main__":
 
     cal.register(3, plus_two(1))
     cal()
+
+    assert MISSING == MISSING
+
+    assert isinstance([], SupportsSetitem)
+    assert isinstance({}, SupportsSetitem)
