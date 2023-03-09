@@ -4,8 +4,6 @@ attribute of a function or class, or call another function with the block as an
 argument.
 """
 
-from __future__ import annotations
-
 from keyword import kwlist
 from typing import TYPE_CHECKING
 
