@@ -40,7 +40,7 @@ def setattr(obj: object, name: str | None = None):
     return wrapper
 
 
-def setitem(obj: SupportsSetitem, idx: object):
+def setitem(obj: "SupportsSetitem", idx: object):
     """
     Set the ``idx`` item of ``obj`` to the decorated function or class.
 
