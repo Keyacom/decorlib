@@ -4,13 +4,10 @@ attribute of a function or class, or call another function with the block as an
 argument.
 """
 
+from collections.abc import Callable
 from keyword import kwlist
-from typing import TYPE_CHECKING
 
-if TYPE_CHECKING:
-    from collections.abc import Callable
-    from .abc import R, SupportsSetitem
-
+from .abc import R, SupportsSetitem
 from .missing import MISSING, MissingRequired
 
 __all__ = ["setattr", "setitem", "call"]
