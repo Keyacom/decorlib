@@ -1,5 +1,6 @@
-from likepep403 import *
 from collections.abc import Callable
+
+from likepep403 import *
 
 if __name__ == "__main__":
 
