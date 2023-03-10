@@ -1,3 +1,3 @@
 # class `SupportsSetitem`: `typing.Protocol`
 
-A typing protocol that has an abstract `__setitem__` method.
+A runtime-checkable typing protocol that has an abstract `__setitem__` method.
