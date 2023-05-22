@@ -1,8 +1,4 @@
-from abc import abstractmethod
-from typing import Protocol, TypeVar, runtime_checkable
-
-R = TypeVar("R")
-
+from typing import Protocol, runtime_checkable
 
 @runtime_checkable
 class SupportsSetitem(Protocol):

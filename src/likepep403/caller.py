@@ -1,8 +1,6 @@
 from collections.abc import Callable
-from typing import overload
 
 from .missing import MISSING
-
 
 class Caller:
     def __init__(self, fn, /, *args, **kwargs):

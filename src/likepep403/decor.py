@@ -7,7 +7,7 @@ argument.
 from collections.abc import Callable
 from keyword import kwlist
 
-from .abc import R, SupportsSetitem
+from .abc import SupportsSetitem
 from .missing import MISSING, MissingRequired
 
 __all__ = ["setattr", "setitem", "call"]
@@ -16,7 +16,7 @@ __all__ = ["setattr", "setitem", "call"]
 _setattr = setattr
 
 
-def setattr(obj: object, name: str | None = None):
+def setattr[R](obj: object, name: str | None = None):
     """
     Set the ``name`` attribute of ``obj`` to the decorated function or class.
 
@@ -37,7 +37,7 @@ def setattr(obj: object, name: str | None = None):
     return wrapper
 
 
-def setitem(obj: "SupportsSetitem", idx: object):
+def setitem[R](obj: SupportsSetitem, idx: object):
     """
     Set the ``idx`` item of ``obj`` to the decorated function or class.
 
@@ -54,7 +54,7 @@ def setitem(obj: "SupportsSetitem", idx: object):
     return wrapper
 
 
-def call(
+def call[R](
     fn: Callable[..., R], /, *args: object, **kwargs: object
 ) -> Callable[[Callable], R]:
     """
