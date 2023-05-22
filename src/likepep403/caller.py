@@ -2,6 +2,7 @@ from collections.abc import Callable
 
 from .missing import MISSING
 
+
 class Caller:
     def __init__(self, fn, /, *args, **kwargs):
         self.fn = fn
