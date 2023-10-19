@@ -54,9 +54,9 @@ def setitem[R](obj: SupportsSetitem, idx: object):
     return wrapper
 
 
-def call[R](
-    fn: Callable[..., R], /, *args: object, **kwargs: object
-) -> Callable[[Callable], R]:
+def call[
+    R
+](fn: Callable[..., R], /, *args: object, **kwargs: object) -> Callable[[Callable], R]:
     """
     Call ``fn`` with ``args`` and ``kwargs``, substituting each ``MISSING``
     definition with the decorated function.
